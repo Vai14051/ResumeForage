@@ -1,0 +1,58 @@
+services:
+
+  postgres:
+    image: postgres:17-alpine
+    container_name: postgres
+
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: resumeforage
+
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+    restart: unless-stopped
+
+  backend:
+    build:
+      context: ./RR
+      dockerfile: Dockerfile
+
+    container_name: backend
+    restart: unless-stopped
+
+    depends_on:
+      - postgres
+
+    ports:
+      - "3000:3000"
+
+    environment:
+      DATABASE_URL: postgresql://postgres:admin@postgres:5432/resumeforage?schema=public
+      PORT: 3000
+      JWT_SECRET: ${JWT_SECRET}
+      JWT_EXPIRES: 1d
+      GROQ_API_KEY: ${GROQ_API_KEY}
+      CLOUDINARY_CLOUD_NAME: ${CLOUDINARY_CLOUD_NAME}
+      CLOUDINARY_API_KEY: ${CLOUDINARY_API_KEY}
+      CLOUDINARY_API_SECRET: ${CLOUDINARY_API_SECRET}
+
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        VITE_API_URL: http://localhost:3000/api
+
+    container_name: frontend
+    restart: unless-stopped
+
+    depends_on:
+      - backend
+
+    ports:
+      - "5173:5173"
+
+volumes:
+  postgres_data:

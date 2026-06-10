@@ -30,8 +30,7 @@ const PublicRoute = ({
   return !isAuthenticated ? (
     <>{children}</>
   ) : (
-
-    <Navigate to="/login" />
+    <Navigate to="/Dashboard" />
   );
 }
 
@@ -39,6 +38,15 @@ const PublicRoute = ({
 export default function App() {
   return (
     <Routes>
+
+      <Route
+        path="/"
+        element={<Navigate to="/dashboard" replace />}
+      />
+
+
+
+
       <Route
         path="/login"
         element={<PublicRoute>
@@ -59,57 +67,57 @@ export default function App() {
 
 
       <Route
-      path="/Dashboard"
-      element={
-        <ProtectedRoute>
-            <Dashboard/>
-        </ProtectedRoute>
-      }
-      
-      
+        path="/Dashboard"
+        element={
+          <ProtectedRoute>
+            <Dashboard />
+          </ProtectedRoute>
+        }
+
+
       />
 
       <Route
         path="/upload"
         element={
           <ProtectedRoute>
-            <Upload/>
+            <Upload />
           </ProtectedRoute>
-        }  
+        }
       />
 
-        <Route
+      <Route
         path="/analyze"
         element={
           <ProtectedRoute>
-            <Analyze/>
+            <Analyze />
           </ProtectedRoute>
         }
-        
-        
-        />
 
-        <Route
-          path="/optimize"
-          element={
-            <ProtectedRoute>
-              <Optimize/>
-            </ProtectedRoute>
-          }
-        
-        
-        />
 
-        <Route
-          path="/history"
-          element={
-            <ProtectedRoute>
-              <History/>
-            </ProtectedRoute>
-          }
-        
-        
-        />
+      />
+
+      <Route
+        path="/optimize"
+        element={
+          <ProtectedRoute>
+            <Optimize />
+          </ProtectedRoute>
+        }
+
+
+      />
+
+      <Route
+        path="/history"
+        element={
+          <ProtectedRoute>
+            <History />
+          </ProtectedRoute>
+        }
+
+
+      />
 
 
 
