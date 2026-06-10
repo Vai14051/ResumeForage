@@ -10,8 +10,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Code
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
       - name: Deploy to VM
         uses: appleboy/ssh-action@v1.2.0
@@ -20,7 +19,12 @@ jobs:
           username: ${{ secrets.VM_USER }}
           key: ${{ secrets.SSH_KEY }}
           script: |
-            cd /home/ubuntu/resume/ResumeForage
-            git pull
+            cd /home/ubuntu/resume/ResumeForage/ResumeForage
+
+            pwd
+            ls -la
+
+            git pull origin main
+
             docker compose down
             docker compose up -d --build
