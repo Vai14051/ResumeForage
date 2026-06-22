@@ -7,7 +7,7 @@
 ## Demo
 
 <!-- Add a screenshot or GIF of your UI here -->
-![ResumeForage Demo](./public/demo.png)1
+!Video of thos 
 
 ---
 
