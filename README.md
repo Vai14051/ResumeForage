@@ -1,11 +1,39 @@
-# React + TypeScript + Vite
+# ResumeForage
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> AI-powered resume analyzer that scores ATS compatibility, matches against job descriptions, and rewrites resumes using Groq & Gemini.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Demo
+
+<!-- Add a screenshot or GIF of your UI here -->
+![ResumeForage Demo](./public/demo.png)
+
+---
+
+## Tech Stack
+
+![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=white&style=flat-square)
+![TypeScript](https://img.shields.io/badge/TypeScript-6-3178C6?logo=typescript&logoColor=white&style=flat-square)
+![Vite](https://img.shields.io/badge/Vite-6-646CFF?logo=vite&logoColor=white&style=flat-square)
+![Chakra UI](https://img.shields.io/badge/Chakra_UI-2-319795?logo=chakraui&logoColor=white&style=flat-square)
+![Redux](https://img.shields.io/badge/Redux_Toolkit-2-764ABC?logo=redux&logoColor=white&style=flat-square)
+![Node.js](https://img.shields.io/badge/Node.js-Express-339933?logo=node.js&logoColor=white&style=flat-square)
+![Prisma](https://img.shields.io/badge/Prisma-6-2D3748?logo=prisma&logoColor=white&style=flat-square)
+![Groq](https://img.shields.io/badge/Groq-AI-F55036?style=flat-square)
+![Gemini](https://img.shields.io/badge/Google_Gemini-AI-4285F4?logo=google&logoColor=white&style=flat-square)
+![Cloudinary](https://img.shields.io/badge/Cloudinary-Storage-3448C5?logo=cloudinary&logoColor=white&style=flat-square)
+![Docker](https://img.shields.io/badge/Docker-Compose-2496ED?logo=docker&logoColor=white&style=flat-square)
+
+---
+
+## Features
+
+- **Resume Upload & Parsing** — Upload a PDF resume; the backend extracts and processes the full text automatically
+- **ATS Compatibility Scoring** — Get a score out of 100 with a breakdown of what's hurting your resume's visibility to applicant tracking systems
+- **Job Description Matching** — Paste any job description and see how well your resume's skills and keywords align
+- **AI-Powered Rewriting** — Weak bullet points and sections are rewritten using Groq & Gemini to be stronger and more impactful
+- **History & Dashboard** — Track all your past analyses and rewrites in one place
 
 ## React Compiler
 
